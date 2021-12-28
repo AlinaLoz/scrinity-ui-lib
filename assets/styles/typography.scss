@@ -1,0 +1,41 @@
+@import 'variables.scss';
+
+// FONT INITIALIZE
+@mixin montserrat-regular {
+  font: {
+    family: "montserrat";
+    weight: 400;
+    style: normal;
+  }
+}
+
+@mixin montserrat-medium {
+  font: {
+    family: "montserrat";
+    weight: 500;
+    style: normal;
+  }
+}
+
+@mixin montserrat-semibold {
+  font: {
+    family: "montserrat";
+    weight: 600;
+    style: normal;
+  }
+}
+
+@mixin montserrat-bold {
+  font: {
+    family: "montserrat";
+    weight: 700;
+    style: normal;
+  }
+}
+
+// FONT DECLARATION
+@mixin slogan() {
+  font-size: 52px;
+  line-height: 60px;
+  @include montserrat-bold();
+}

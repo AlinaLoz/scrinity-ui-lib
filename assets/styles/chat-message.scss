@@ -1,0 +1,304 @@
+@import 'assets/styles/typography.scss';
+@import 'assets/styles/ui-elements.scss';
+@import 'assets/styles/variables';
+
+html {
+  body {
+
+    //.rcw-widget-container {
+    //  max-width: 100%;
+    //  position: relative;
+    //  height: 100%;
+    //  margin: 0;
+    //}
+
+    .rcw-conversation-container {
+      border-radius: 4px;
+    }
+
+    .anonymous {
+      .rcw-messages-container {
+        //height: calc(100vh - 148px);
+      }
+      .rcw-sender {
+        display: none;
+      }
+    }
+
+    .rcw-messages-container {
+      max-height: none;
+      height: calc(100vh - 195px);;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      @media (max-width: $sm) {
+        height: calc(100vh - 94px);
+      }
+    }
+
+    .rcw-widget-container .rcw-header {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 16px;
+
+      border-bottom: 1px solid $athensGray;
+      border-top: 1px solid $athensGray;
+      line-height: 18px;
+      background: $white;
+
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      position: relative;
+
+      .rcw-close-button {
+        display: none;
+        z-index: 1000;
+        @media (max-width: $sm) {
+          display: block;
+        }
+
+        position: absolute;
+        top: 11px;
+        left: 18px;
+        height: 30px;
+        width: 30px;
+        border: none;
+        background-color: transparent;
+        margin-right: 10px;
+        img {
+          height: 30px;
+          width: 30px;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          background: no-repeat url("../images/back.svg");
+        }
+        .rcw-close {
+          display: none;
+        }
+      }
+
+      .rcw-title {
+        position: relative;
+        top: 1px;
+        @include montserrat-medium();
+        color: $codGray;
+        font-size: 15px;
+        line-height: 18px;
+        margin-bottom: 0;
+        text-align: left;
+        @media (max-width: $sm) {
+          padding: 0 0 0 28px;
+        }
+        padding: 0;
+      }
+
+      @media (max-width: $sm) {
+        padding-left: 20px;
+      }
+
+      & span {
+        display: none;
+      }
+    }
+
+    .rcw-sender {
+      flex-direction: row;
+      overflow: hidden;
+      background: $white;
+      border-radius: 4px;
+      padding: 0;
+      height: 45px;
+      max-height: 45px;
+      border-top: 1px solid $athensGray;
+      align-items: flex-start;
+
+      @media (max-width: $sm) {
+        border-radius: 0;
+      }
+
+      .rcw-new-message {
+        border-radius: 0;
+        max-height: 45px;
+        height: 45px;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-left: 1px solid #EBEFF2;
+        border-right: 1px solid #EBEFF2;
+        padding: 5px;
+        & > div {
+          overflow: scroll;
+          position: relative;
+          top: 10px;
+        }
+      }
+
+      .rcw-input {
+        @include white-input();
+        text-indent: 10px;
+        line-height: normal;
+        height: auto !important;
+      }
+
+      .image-upload {
+        height: 45px;
+        width: 45px;
+        position: relative;
+        left: 4px;
+        img {
+          width: 13px;
+          position: relative;
+          top: 9px;
+          left: 11px;
+        }
+      }
+
+      .rcw-send {
+        background: $white;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .rcw-messages-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      align-items: flex-end;
+      padding-bottom: 20px;
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .message.img-message {
+      padding: 0;
+      & div {
+        border: 0;
+        padding: 0;
+        background: transparent;
+      }
+    }
+
+    .rcw-message-client {
+      & > .message {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+
+        .rcw-timestamp {
+          display: inline-block;
+        }
+      }
+    }
+
+    .rcw-message {
+      margin: 0 10px;
+      width: 100%;
+
+      .rcw-client, .rcw-response {
+        min-width: 56px;
+        max-width: 100%;
+        border-radius: 12px;
+        //box-shadow: 0 1px 2px 0 rgb(16 35 47 15%);
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        user-select: none;
+        background-color: #fff;
+        margin-bottom: 4px;
+      }
+
+      & > div {
+        @include montserrat-regular();
+        border-radius: 4px;
+        font-size: 13px;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        //padding: 0.5rem 0.5rem 0.375rem 0.625rem;
+        background-color: inherit;
+      }
+
+      .rcw-message-text {
+        background: transparent;
+        padding: 5px 10px;
+        max-width: 524px;
+        @media (max-width: $sm) {
+          max-width: 215px;
+        }
+      }
+
+      .rcw-message-img {
+        border-radius: 10px;
+      }
+
+      .rcw-response {
+        background: $ming;
+        color: $white;
+      }
+
+      .rcw-client {
+        //border-bottom-right-radius: 0;
+        background: $white;
+        border: 1px solid $athensGray;
+        margin-left: auto;
+      }
+
+      .rcw-timestamp {
+        min-width: auto;
+        position: relative;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        border: 0;
+        color: $botticelli;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .rcw-message-day {
+      @include montserrat-medium();
+      font-size: 13px;
+      line-height: 16px;
+      color: $paleSky;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .rcw-message .rcw-images {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      background: transparent;
+      img {
+        border-radius: 10px;
+        margin-bottom: 20px;
+        @media (max-width: $sm) {
+          max-width: 200px;
+        }
+      }
+    }
+
+    div#ReactSimpleImageViewer {
+      img {
+        @media (max-width: $sm) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
