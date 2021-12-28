@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 
-
 import '../../../assets/styles/main.scss';
 import './style.scss';
 import Widget from '../../components/Widget';
