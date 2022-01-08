@@ -39,6 +39,7 @@ type Props = {
   showBadge?: boolean;
   resizable?: boolean;
   emojis?: boolean
+  className?: string
 }
 
 function WidgetLayout({
@@ -67,7 +68,8 @@ function WidgetLayout({
   zoomStep,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  className,
 }: Props) {
   const dispatch = useDispatch();
   const { dissableInput, showChat, visible } = useSelector((state: GlobalState) => ({
@@ -123,8 +125,8 @@ function WidgetLayout({
       className={cn('rcw-widget-container', {
         'rcw-full-screen': fullScreenMode,
         'rcw-previewer': imagePreview,
-        'rcw-close-widget-container ': !showChat
-        })
+        'rcw-close-widget-container ': !showChat,
+        }, className)
       }
     >
       {showChat &&
