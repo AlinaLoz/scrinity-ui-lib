@@ -34,6 +34,7 @@ export type Props = {
   handleSubmit?: AnyFunction;
   showBadge?: boolean;
   resizable?: boolean;
+  className?: string;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -63,11 +64,13 @@ function ConnectedWidget({
   handleSubmit,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  className,
 }: Props) {
   return (
     <Provider store={store}>
       <Widget
+        className={className}
         title={title}
         titleAvatar={titleAvatar}
         subtitle={subtitle}
@@ -117,6 +120,7 @@ const defaultProps = {
   imagePreview: false,
   zoomStep: 80,
   showBadge: true,
+  className: '',
 };
 ConnectedWidget.defaultProps = defaultProps;
 

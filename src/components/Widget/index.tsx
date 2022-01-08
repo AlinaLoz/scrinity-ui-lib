@@ -34,6 +34,7 @@ type Props = {
   showBadge?: boolean;
   resizable?: boolean;
   emojis?: boolean;
+  className?: string;
 }
 
 function Widget({
@@ -63,7 +64,8 @@ function Widget({
   handleSubmit,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  className,
 }: Props) {
   const dispatch = useDispatch();
 
@@ -89,6 +91,7 @@ function Widget({
 
   return (
     <WidgetLayout
+      className={className}
       onToggleConversation={toggleConversation}
       onSendMessage={handleMessageSubmit}
       onQuickButtonClicked={onQuickButtonClicked}
