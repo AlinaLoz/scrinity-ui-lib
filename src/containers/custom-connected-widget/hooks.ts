@@ -36,6 +36,7 @@ export const useUpdateChatMessages = ({ messagesById, userId, institution }: TUs
     }
     (async () => {
       const entries = Object.entries(messagesById);
+      dropMessages();
       await entries.reduce(async (promise, [day, dayMessages]) => {
         await promise;
         await sendMessage({ createdAt: day, content: '' }, '', 'day');
