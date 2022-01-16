@@ -21,6 +21,7 @@ const MESSAGES_BY_ID = {
 export const App = () => {
   return (
     <CustomWidget
+      className=""
       chatTitle={"Аноним"}
       chatId={1}
       userId={1}
