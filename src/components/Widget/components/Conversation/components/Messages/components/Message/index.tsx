@@ -28,7 +28,7 @@ function Message({ message }: Props) {
   
   return (
     <div className={cn("message",  !isImg ? '' : 'img-message')}>
-      {message.timestamp && <span className="rcw-timestamp">{format(new Date(message.timestamp), 'hh:mm')}</span>}
+      {message.timestamp && <span className="rcw-timestamp">{format(new Date(message.timestamp), 'HH:mm')}</span>}
       <div className={`rcw-${message.sender}`}>
         <div className="rcw-message-text" dangerouslySetInnerHTML={{ __html: sanitizedHTML.replace(/\n$/,'') }} />
       </div>
