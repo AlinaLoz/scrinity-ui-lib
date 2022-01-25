@@ -8,6 +8,7 @@ import { IChatById, ISendMessageRequest } from '../../interfaces';
 import { getFirstResponseError, TMessagesByDay } from '../../helpers';
 import { toggleWidget, isWidgetOpened, dropMessages } from '../../store/dispatcher';
 import { sendMessage } from './helpers';
+import { resizeFile } from '../../helpers/images.helper';
 
 export const useChangeOpenedChat = (messages: IChatById[]): void => {
   useEffect(() => {
@@ -107,7 +108,7 @@ const uploadFeedbackImages = (uploadImagesApi: TUploadImages): TUploadFeedbackIm
   const uploadImages = async (files: File[]) => {
     const data = new FormData();
     await Promise.all(files.map(async (file) => {
-      data.append('images', file);
+      data.append('images', await resizeFile({ file }));
     }));
     const { imagesKeys } = await uploadImagesApi(data);
     return imagesKeys;

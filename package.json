@@ -1,6 +1,6 @@
 {
   "name": "scrinity-chat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Chat web widget for React apps",
   "main": "lib/index.js",
   "author": "Martín Callegari <martin.callegari@wolox.com.ar>",
@@ -26,6 +26,7 @@
     "markdown-it-link-attributes": "^2.1.0",
     "markdown-it-sanitizer": "^0.4.3",
     "markdown-it-sup": "^1.0.0",
+    "react-image-file-resizer": "^0.4.7",
     "react-redux": "^7.2.4",
     "react-toastify": "^8.1.0",
     "redux": "^4.1.0"
